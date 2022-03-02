@@ -2,11 +2,13 @@ package com.interoffice.account.domain;
 
 import java.util.Optional;
 
-/** temp.
+/**
+ * temp.
  *
  */
 public interface AccountRepository {
 
-  Optional<Account> findByEmail(String email);
+
+  Optional<Account> findById(String id);
 
 }
