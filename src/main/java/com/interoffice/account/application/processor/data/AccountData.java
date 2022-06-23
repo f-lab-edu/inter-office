@@ -14,7 +14,8 @@ public class AccountData {
     return new AccountData(account.getId(), account.getEmail(), account.getUsername(),
         account.getPhoneNumber());
   }
-  public AccountData(long id, String email,String username,
+
+  public AccountData(long id, String email, String username,
       String phoneNumber) {
     this.id = id;
     this.email = email;

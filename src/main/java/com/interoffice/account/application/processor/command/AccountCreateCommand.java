@@ -1,6 +1,7 @@
 package com.interoffice.account.application.processor.command;
 
 public class AccountCreateCommand {
+
   private final String email;
   private final String password;
   private final String name;
@@ -8,12 +9,12 @@ public class AccountCreateCommand {
 
   @Override
   public String toString() {
-    return "AccountCreateCommand{" +
-        "email='" + email + '\'' +
-        ", password='" + password + '\'' +
-        ", name='" + name + '\'' +
-        ", phoneNumber='" + phoneNumber + '\'' +
-        '}';
+    return "AccountCreateCommand{"
+        + "email='" + email + '\''
+        + ", password='" + password + '\''
+        + ", name='" + name + '\''
+        + ", phoneNumber='" + phoneNumber + '\''
+        + '}';
   }
 
   public AccountCreateCommand(String email, String password, String name,

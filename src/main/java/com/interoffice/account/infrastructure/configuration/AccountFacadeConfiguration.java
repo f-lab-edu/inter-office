@@ -10,26 +10,27 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class AccountFacadeConfiguration {
-    AccountRepository accountRepository;
-    PasswordEncoder passwordEncoder;
 
-    @Bean
-    public AccountFacade accountFacade(
-            AccountCreateProcessor accountCreateProcessor,
-            AccountLoginProcessor accountLoginProcessor) {
-        return new AccountFacade(accountCreateProcessor, accountLoginProcessor);
-    }
+  AccountRepository accountRepository;
+  PasswordEncoder passwordEncoder;
 
-    @Bean
-    public AccountCreateProcessor AccountCreateProcessor() {
-        return new AccountCreateProcessor(accountRepository,
-                passwordEncoder);
-    }
+  @Bean
+  public AccountFacade accountFacade(
+      AccountCreateProcessor accountCreateProcessor,
+      AccountLoginProcessor accountLoginProcessor) {
+    return new AccountFacade(accountCreateProcessor, accountLoginProcessor);
+  }
 
-    @Bean
-    public AccountLoginProcessor AccountLoginProcessor() {
-        return new AccountLoginProcessor(accountRepository, passwordEncoder);
-    }
+  @Bean
+  public AccountCreateProcessor accountCreateProcessor() {
+    return new AccountCreateProcessor(accountRepository,
+        passwordEncoder);
+  }
+
+  @Bean
+  public AccountLoginProcessor accountLoginProcessor() {
+    return new AccountLoginProcessor(accountRepository, passwordEncoder);
+  }
 
 }
 
