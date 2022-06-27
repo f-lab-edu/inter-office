@@ -1,5 +1,0 @@
-#redis 설정.
-spring:
-  redis:
-    host: localhost
-    port: 6379
