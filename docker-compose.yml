@@ -14,4 +14,37 @@ services:
       MYSQL_DATABASE: "employees"
       MYSQL_USER: "root"
       MYSQL_PASSWORD: "1234"
-volumes:db_data={}
+  redis:
+    image: redis:latest
+    command: redis-server --port 6379
+    ports:
+      - "6379:6379"
+  nginx:
+    image: nginx
+    container_name: nginx
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx/:/etc/nginx/conf.d/
+    depends_on:
+      - appserver1
+      - appserver2
+  appserver1:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    env_file:
+      - inter.env
+    depends_on:
+      - db
+      - redis
+  appserver2:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    env_file:
+      - inter.env
+    depends_on:
+      - db
+      - redis
+  volumes:db_data={}
