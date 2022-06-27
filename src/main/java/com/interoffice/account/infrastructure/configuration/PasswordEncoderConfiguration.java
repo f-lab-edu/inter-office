@@ -8,10 +8,10 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class PasswordEncoderConfiguration {
 
-    @Bean
-    public PasswordEncoder passwordEncoder() {
-        return new SHA256PasswordEncoder();
-    }
+  @Bean
+  public PasswordEncoder passwordEncoder() {
+    return new SHA256PasswordEncoder();
+  }
 
 
 }

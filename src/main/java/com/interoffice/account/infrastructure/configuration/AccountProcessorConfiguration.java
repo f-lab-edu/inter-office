@@ -11,19 +11,18 @@ import org.springframework.context.annotation.Configuration;
 public class AccountProcessorConfiguration {
 
 
-    @Bean
-    public AccountCreateProcessor accountCreateProcessor(AccountRepository accountRepository,
-                                                         PasswordEncoder passwordEncoder) {
-        return new AccountCreateProcessor(accountRepository, passwordEncoder);
-    }
+  @Bean
+  public AccountCreateProcessor accountCreateProcessor(AccountRepository accountRepository,
+      PasswordEncoder passwordEncoder) {
+    return new AccountCreateProcessor(accountRepository, passwordEncoder);
+  }
 
-    @Bean
-    public AccountLoginProcessor accountLoginProcessor(
-            AccountRepository accountRepository,
-            PasswordEncoder passwordEncoder) {
-        return new AccountLoginProcessor(accountRepository, passwordEncoder);
-    }
-
+  @Bean
+  public AccountLoginProcessor accountLoginProcessor(
+      AccountRepository accountRepository,
+      PasswordEncoder passwordEncoder) {
+    return new AccountLoginProcessor(accountRepository, passwordEncoder);
+  }
 
 
 }

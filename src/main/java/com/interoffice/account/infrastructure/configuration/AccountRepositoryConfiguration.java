@@ -13,22 +13,22 @@ import javax.sql.DataSource;
 @Configuration
 public class AccountRepositoryConfiguration {
 
-    @Autowired
-    private DataSource dataSource;
+  @Autowired
+  private DataSource dataSource;
 
-    @Bean
-    public AccountRepository accountRepository(
-            JdbcTemplateAccountRepository jdbcTemplateAccountRepository) {
-        return new AccountRepositoryAdapter(jdbcTemplateAccountRepository);
-    }
+  @Bean
+  public AccountRepository accountRepository(
+      JdbcTemplateAccountRepository jdbcTemplateAccountRepository) {
+    return new AccountRepositoryAdapter(jdbcTemplateAccountRepository);
+  }
 
-    @Bean
-    public InMemroyAccountRepository inMemroyAccountRepository() {
-        return new InMemroyAccountRepository();
-    }
+  @Bean
+  public InMemroyAccountRepository inMemroyAccountRepository() {
+    return new InMemroyAccountRepository();
+  }
 
-    @Bean
-    public JdbcTemplateAccountRepository jdbcTemplateAccountRepository() {
-        return new JdbcTemplateAccountRepository(dataSource);
-    }
+  @Bean
+  public JdbcTemplateAccountRepository jdbcTemplateAccountRepository() {
+    return new JdbcTemplateAccountRepository(dataSource);
+  }
 }
