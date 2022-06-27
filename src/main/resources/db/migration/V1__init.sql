@@ -1,5 +1,4 @@
-
-CREATE TABLE `users` (
+CREATE TABLE IF NOT EXISTS 'employees'.'users' (
                          `id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
                          `email` varchar(50) NOT NULL,
                          `password` varchar(200) NOT NULL,
